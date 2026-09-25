@@ -18,15 +18,28 @@
 
 ## 🧑‍💻 About Me
 
-```yaml
-name: Siddhant Deep
-role: Data Analyst
-education: B.C.A (Computer Applications) @ PSIT Kanpur | CGPA 8.54/10
-current_position: Creative Head @ Codester Club, PSIT
-past_experience: Data Science Intern @ SkillCraft Technology
-focus: EDA, Data Cleaning, Dashboard Design, Full-Stack Basics
-fun_fact: Also a freelance graphic designer for 5+ clients
 ```
+
+  ╭─────────────╮   siddhant@psit-kanpur
+  │   ▄▄▄▄▄▄▄   │   ───────────────────
+  │  █  ◕ ◕  █  │   OS        : Human (BCA Build, v3)
+  │  █   ▽   █  │   Role      : Data Analyst
+  │   ▀▀▀▀▀▀▀   │   Uptime    : 2 yrs coding, counting...
+  ╰─────────────╯   
+                     Education : B.C.A @ PSIT Kanpur (CGPA: 8.54/10)
+  ───────────────    Position  : Creative Head @ Codester Club
+  Resolution : 4K     Past Role : Data Science Intern @ SkillCraft
+  Terminal   : VS Code
+  Shell      : Python 3.x
+  ───────────────    Focus     : EDA · Dashboards · Full-Stack Basics
+  Packages   : 11+    Side Gig  : Freelance Graphic Designer (5+ clients)
+  Memory     : Always learning, never full
+
+```
+
+<div align="center">
+<sub>💡 Currently building analytics dashboards, occasionally designing posters, permanently debugging something.</sub>
+</div>
 
 <br/>
 

@@ -148,29 +148,25 @@ Community: Codester Club (Creative Head)
 
 <div align="center">
 
-<img src="./assets/connect4.svg" alt="Connect Four vs JARVIS" width="100%"/>
+<!--C4_BOARD:START--><img src="./assets/connect4.svg?v=0" alt="Connect Four board" width="100%"/><!--C4_BOARD:END-->
 
-<a href="https://github.com/TechSidd18/TechSidd18/issues/new?title=c4%7Cdrop%7C1&body=Just%20click%20%22Submit%20new%20issue%22.%20Do%20not%20change%20the%20title."><img src="https://img.shields.io/badge/%E2%96%BC-1-1F1F22?style=for-the-badge&labelColor=A4161A&logoColor=C8A45C" alt="Drop in column 1"/></a>
-<a href="https://github.com/TechSidd18/TechSidd18/issues/new?title=c4%7Cdrop%7C2&body=Just%20click%20%22Submit%20new%20issue%22.%20Do%20not%20change%20the%20title."><img src="https://img.shields.io/badge/%E2%96%BC-2-1F1F22?style=for-the-badge&labelColor=A4161A&logoColor=C8A45C" alt="Drop in column 2"/></a>
-<a href="https://github.com/TechSidd18/TechSidd18/issues/new?title=c4%7Cdrop%7C3&body=Just%20click%20%22Submit%20new%20issue%22.%20Do%20not%20change%20the%20title."><img src="https://img.shields.io/badge/%E2%96%BC-3-1F1F22?style=for-the-badge&labelColor=A4161A&logoColor=C8A45C" alt="Drop in column 3"/></a>
-<a href="https://github.com/TechSidd18/TechSidd18/issues/new?title=c4%7Cdrop%7C4&body=Just%20click%20%22Submit%20new%20issue%22.%20Do%20not%20change%20the%20title."><img src="https://img.shields.io/badge/%E2%96%BC-4-1F1F22?style=for-the-badge&labelColor=A4161A&logoColor=C8A45C" alt="Drop in column 4"/></a>
-<a href="https://github.com/TechSidd18/TechSidd18/issues/new?title=c4%7Cdrop%7C5&body=Just%20click%20%22Submit%20new%20issue%22.%20Do%20not%20change%20the%20title."><img src="https://img.shields.io/badge/%E2%96%BC-5-1F1F22?style=for-the-badge&labelColor=A4161A&logoColor=C8A45C" alt="Drop in column 5"/></a>
-<a href="https://github.com/TechSidd18/TechSidd18/issues/new?title=c4%7Cdrop%7C6&body=Just%20click%20%22Submit%20new%20issue%22.%20Do%20not%20change%20the%20title."><img src="https://img.shields.io/badge/%E2%96%BC-6-1F1F22?style=for-the-badge&labelColor=A4161A&logoColor=C8A45C" alt="Drop in column 6"/></a>
-<a href="https://github.com/TechSidd18/TechSidd18/issues/new?title=c4%7Cdrop%7C7&body=Just%20click%20%22Submit%20new%20issue%22.%20Do%20not%20change%20the%20title."><img src="https://img.shields.io/badge/%E2%96%BC-7-1F1F22?style=for-the-badge&labelColor=A4161A&logoColor=C8A45C" alt="Drop in column 7"/></a>
-
-<br/>
-
-<a href="https://github.com/TechSidd18/TechSidd18/issues/new?title=c4%7Cnew&body=Just%20click%20%22Submit%20new%20issue%22.%20Do%20not%20change%20the%20title."><img src="https://img.shields.io/badge/NEW-GAME-1F1F22?style=flat-square&labelColor=1F1F22" alt="New game"/></a>
-
-<sub>Click a column to drop your disc. A GitHub Action plays JARVIS's reply, so the board updates after about a minute.</sub>
-
-#### Recent moves
-
-<!--C4_LOG:START-->
-- @TechSidd18 dropped in column 4, JARVIS answered in column 4
-<!--C4_LOG:END-->
+<a href="https://github.com/TechSidd18/TechSidd18/issues/new?title=c4%7Cdrop%7C1&body=Just+press+%22Submit+new+issue%22.+Do+not+edit+the+title."><img src="https://img.shields.io/badge/DROP-1-1F1F22?style=for-the-badge&labelColor=A4161A" alt="Drop in column 1"/></a>
+<a href="https://github.com/TechSidd18/TechSidd18/issues/new?title=c4%7Cdrop%7C2&body=Just+press+%22Submit+new+issue%22.+Do+not+edit+the+title."><img src="https://img.shields.io/badge/DROP-2-1F1F22?style=for-the-badge&labelColor=A4161A" alt="Drop in column 2"/></a>
+<a href="https://github.com/TechSidd18/TechSidd18/issues/new?title=c4%7Cdrop%7C3&body=Just+press+%22Submit+new+issue%22.+Do+not+edit+the+title."><img src="https://img.shields.io/badge/DROP-3-1F1F22?style=for-the-badge&labelColor=A4161A" alt="Drop in column 3"/></a>
+<a href="https://github.com/TechSidd18/TechSidd18/issues/new?title=c4%7Cdrop%7C4&body=Just+press+%22Submit+new+issue%22.+Do+not+edit+the+title."><img src="https://img.shields.io/badge/DROP-4-1F1F22?style=for-the-badge&labelColor=A4161A" alt="Drop in column 4"/></a>
+<a href="https://github.com/TechSidd18/TechSidd18/issues/new?title=c4%7Cdrop%7C5&body=Just+press+%22Submit+new+issue%22.+Do+not+edit+the+title."><img src="https://img.shields.io/badge/DROP-5-1F1F22?style=for-the-badge&labelColor=A4161A" alt="Drop in column 5"/></a>
+<a href="https://github.com/TechSidd18/TechSidd18/issues/new?title=c4%7Cdrop%7C6&body=Just+press+%22Submit+new+issue%22.+Do+not+edit+the+title."><img src="https://img.shields.io/badge/DROP-6-1F1F22?style=for-the-badge&labelColor=A4161A" alt="Drop in column 6"/></a>
+<a href="https://github.com/TechSidd18/TechSidd18/issues/new?title=c4%7Cdrop%7C7&body=Just+press+%22Submit+new+issue%22.+Do+not+edit+the+title."><img src="https://img.shields.io/badge/DROP-7-1F1F22?style=for-the-badge&labelColor=A4161A" alt="Drop in column 7"/></a>
 
 </div>
+
+**How to play:** click a column button, then press **Submit new issue** (don't edit the title). A GitHub Action drops your gold disc, JARVIS answers with crimson, and the board refreshes in a minute or two.
+
+**Recent moves**
+
+<!--C4_LOG:START-->
+_No moves yet. Be the first to play!_
+<!--C4_LOG:END-->
 
 ---
 
@@ -182,7 +178,7 @@ Community: Codester Club (Creative Head)
 
 <img src="./assets/stats.svg" alt="GitHub stats" width="100%"/>
 
-<img src="./assets/candles.svg" alt="Contribution candlestick chart" width="100%"/>
+<img src="./assets/reactor.svg" alt="Reactor Output: radial contribution chart" width="100%"/>
 
 <img src="./assets/languages.svg" alt="Top languages" width="100%"/>
 

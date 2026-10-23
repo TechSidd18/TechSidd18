@@ -16,38 +16,43 @@ jobs:
   play:
     if: startsWith(github.event.issue.title, 'c4|')
     runs-on: ubuntu-latest
-    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          ref: ${{ github.event.repository.default_branch }}
 
-      - name: Play the move
+      - name: Play move
+        id: play
         env:
           ISSUE_TITLE: ${{ github.event.issue.title }}
           ISSUE_USER: ${{ github.event.issue.user.login }}
-        run: python scripts/connect4.py
+        run: python3 scripts/connect4.py
 
       - name: Commit board
+        if: steps.play.outputs.result == 'ok'
+        env:
+          ISSUE_USER: ${{ github.event.issue.user.login }}
+          BRANCH: ${{ github.event.repository.default_branch }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add game/state.json assets/connect4.svg README.md
-          if git diff --cached --quiet; then
-            echo "No changes"
-          else
-            git commit -m "game: connect four move [skip ci]"
-            git pull --rebase --autostash origin main
-            git push
-          fi
+          git add game assets README.md
+          git diff --cached --quiet && exit 0
+          git commit -m "c4: move by @${ISSUE_USER}"
+          for i in 1 2 3 4; do
+            git pull --rebase origin "$BRANCH" && git push origin "HEAD:$BRANCH" && exit 0
+            sleep $((i * 3))
+          done
+          echo "push failed" > /tmp/c4_comment.md
+          exit 1
 
       - name: Reply and close issue
+        if: always()
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          NUM: ${{ github.event.issue.number }}
           REPO: ${{ github.repository }}
         run: |
-          gh issue comment "$ISSUE_NUMBER" --repo "$REPO" --body-file /tmp/c4_comment.md
-          gh issue close "$ISSUE_NUMBER" --repo "$REPO" --reason completed
+          [ -s /tmp/c4_comment.md ] || echo "Something went wrong while processing this move. Please try again." > /tmp/c4_comment.md
+          gh issue comment "$NUM" --repo "$REPO" --body-file /tmp/c4_comment.md || true
+          gh issue close "$NUM" --repo "$REPO" --reason completed || true

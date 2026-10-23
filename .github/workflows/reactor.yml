@@ -1,0 +1,41 @@
+name: Update Reactor Output
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/generate_reactor.py
+
+permissions:
+  contents: write
+
+concurrency:
+  group: reactor
+  cancel-in-progress: false
+
+jobs:
+  reactor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate reactor.svg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_USER: ${{ github.repository_owner }}
+        run: python3 scripts/generate_reactor.py
+      - name: Commit
+        env:
+          BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/reactor.svg
+          git diff --cached --quiet && exit 0
+          git commit -m "chore: refresh reactor output"
+          for i in 1 2 3; do
+            git pull --rebase origin "$BRANCH" && git push origin "HEAD:$BRANCH" && exit 0
+            sleep $((i * 3))
+          done
+          exit 1

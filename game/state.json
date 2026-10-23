@@ -40,7 +40,7 @@
    0,
    0,
    0,
-   2,
+   0,
    0,
    0,
    0
@@ -49,31 +49,21 @@
    0,
    0,
    0,
-   1,
+   0,
    0,
    0,
    0
   ]
  ],
  "status": "playing",
- "stats": {
-  "games": 0,
-  "visitors": 0,
+ "last": [],
+ "win": [],
+ "score": {
+  "visitor": 0,
   "jarvis": 0,
-  "draws": 0
+  "draw": 0
  },
- "log": [
-  "@TechSidd18 dropped in column 4, JARVIS answered in column 4"
- ],
- "last": [
-  [
-   5,
-   3
-  ],
-  [
-   4,
-   3
-  ]
- ],
- "win": []
+ "log": [],
+ "version": 0,
+ "games": 1
 }

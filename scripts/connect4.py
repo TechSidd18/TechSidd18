@@ -1,274 +1,224 @@
 #!/usr/bin/env python3
-"""Connect Four vs JARVIS, played through GitHub issues + Actions.
+"""Connect Four vs JARVIS — runs inside GitHub Actions on issue open.
+Issue title must be exactly  c4|drop|1..7  or  c4|new.   `python3 scripts/connect4.py --init` rebuilds the board/README only."""
+import os, re, sys, json, time, html, random
 
-A visitor clicks a column badge in the README -> a pre-filled issue
-("c4|drop|3") opens -> this script applies the move, JARVIS answers,
-and the board SVG + README log are regenerated.
-Only stdlib. Issue title is read from the environment, never from a shell.
-"""
-import json
-import os
-import re
-import sys
+ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
+STATE = os.path.join(ROOT, "game", "state.json")
+BOARD_SVG = os.path.join(ROOT, "assets", "connect4.svg")
+README = os.path.join(ROOT, "README.md")
+COMMENT = os.environ.get("C4_COMMENT_FILE", "/tmp/c4_comment.md")
+R, C = 6, 7
+GOLD, GOLD2, RED, RED2 = "#C8A45C", "#E6C77E", "#A4161A", "#C8242A"
+TXT, MUT, HAIR, BG = "#E8E6E1", "#8C867A", "#2A2620", "#0D0D0F"
+MONO = "'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace"
+SANS = "'Segoe UI',-apple-system,Helvetica,Arial,sans-serif"
 
-ROWS, COLS = 6, 7
-STATE = os.environ.get("STATE_PATH", "game/state.json")
-SVG = os.environ.get("SVG_PATH", "assets/connect4.svg")
-README = os.environ.get("README_PATH", "README.md")
-COMMENT = os.environ.get("COMMENT_PATH", "/tmp/c4_comment.md")
-GOLD, CRIM, BG = "#C8A45C", "#A4161A", "#0E0E10"
-
-
-# ---------------- game logic ----------------
-def new_state(stats=None):
-    return {
-        "board": [[0] * COLS for _ in range(ROWS)],
-        "status": "playing",  # playing | won | lost | draw
-        "stats": stats or {"games": 0, "visitors": 0, "jarvis": 0, "draws": 0},
-        "log": [],
-        "last": [],  # cells dropped in the most recent turn (for the drop animation)
-        "win": [],  # winning four cells
-    }
-
-
-def drop(board, col, p):
-    for r in range(ROWS - 1, -1, -1):
-        if board[r][col] == 0:
-            board[r][col] = p
-            return r
-    return None
-
-
-def valid(board):
-    return [c for c in range(COLS) if board[0][c] == 0]
-
-
-def find_win(board):
-    for r in range(ROWS):
-        for c in range(COLS):
-            p = board[r][c]
-            if not p:
-                continue
-            for dr, dc in ((0, 1), (1, 0), (1, 1), (1, -1)):
-                cells = [(r + i * dr, c + i * dc) for i in range(4)]
-                if all(0 <= x < ROWS and 0 <= y < COLS and board[x][y] == p for x, y in cells):
-                    return p, cells
-    return 0, []
-
-
-def heuristic(board, me):
-    opp = 1 if me == 2 else 2
-    score = sum(1 for r in range(ROWS) if board[r][COLS // 2] == me) * 3
-    wins = []
-    for r in range(ROWS):
-        for c in range(COLS):
-            for dr, dc in ((0, 1), (1, 0), (1, 1), (1, -1)):
-                cells = [(r + i * dr, c + i * dc) for i in range(4)]
-                if all(0 <= x < ROWS and 0 <= y < COLS for x, y in cells):
-                    wins.append([board[x][y] for x, y in cells])
-    for w in wins:
-        m, o, e = w.count(me), w.count(opp), w.count(0)
-        if m == 4: score += 1000
-        elif m == 3 and e == 1: score += 6
-        elif m == 2 and e == 2: score += 2
-        if o == 3 and e == 1: score -= 8
-    return score
-
-
-def minimax(board, depth, alpha, beta, maxing, me=2):
-    opp = 1
-    w, _ = find_win(board)
-    if w == me: return 100000 + depth, None
-    if w == opp: return -100000 - depth, None
-    cols = valid(board)
-    if not cols or depth == 0:
-        return heuristic(board, me), None
-    order = sorted(cols, key=lambda c: abs(c - COLS // 2))
-    best_col = order[0]
-    if maxing:
-        val = -10**9
-        for c in order:
-            b = [row[:] for row in board]; drop(b, c, me)
-            s, _ = minimax(b, depth - 1, alpha, beta, False, me)
-            if s > val: val, best_col = s, c
-            alpha = max(alpha, val)
-            if alpha >= beta: break
-        return val, best_col
-    val = 10**9
-    for c in order:
-        b = [row[:] for row in board]; drop(b, c, opp)
-        s, _ = minimax(b, depth - 1, alpha, beta, True, me)
-        if s < val: val, best_col = s, c
-        beta = min(beta, val)
-        if alpha >= beta: break
-    return val, best_col
-
-
-def jarvis_move(board):
-    return minimax(board, 5, -10**9, 10**9, True)[1]
-
-
-# ---------------- rendering ----------------
-def render(st):
-    W, H = 950, 420
-    cell, x0, y0 = 50, 70, 78
-    board, last = st["board"], {tuple(x) for x in st["last"]}
-    win = {tuple(x) for x in st["win"]}
-    parts = []
-    for c in range(COLS):
-        parts.append(f'<text class="mono" x="{x0+c*cell+cell/2}" y="{y0-12}" font-size="10" fill="#7E786B" text-anchor="middle">{c+1}</text>')
-    parts.append(f'<rect x="{x0-8}" y="{y0-4}" width="{COLS*cell+16}" height="{ROWS*cell+8}" rx="10" fill="none" stroke="{GOLD}" stroke-opacity=".3"/>')
-    for r in range(ROWS):
-        for c in range(COLS):
-            cx, cy = x0 + c * cell + cell / 2, y0 + r * cell + cell / 2 + 2
-            p = board[r][c]
-            parts.append(f'<circle cx="{cx}" cy="{cy}" r="19" fill="#161517" stroke="{GOLD}" stroke-opacity=".12"/>')
-            if p:
-                col = GOLD if p == 1 else CRIM
-                cls = "disc fall" if (r, c) in last else "disc"
-                delay = f' style="animation-delay:{0.0 if p == 1 else 0.55}s"' if (r, c) in last else ""
-                parts.append(
-                    f'<g class="{cls}"{delay}><circle cx="{cx}" cy="{cy}" r="18" fill="{col}"/>'
-                    f'<circle cx="{cx}" cy="{cy}" r="11" fill="none" stroke="#0E0E10" stroke-opacity=".35" stroke-width="2"/></g>'
-                )
-            if (r, c) in win:
-                parts.append(f'<circle class="winring" cx="{cx}" cy="{cy}" r="22" fill="none" stroke="#F3EEE2" stroke-width="2"/>')
-    status = st["status"]
-    msg, sub = {
-        "playing": ("YOUR MOVE", "Pick a column. JARVIS answers right after."),
-        "won": ("YOU WON", "Nicely played. Drop a disc to start a new game."),
-        "lost": ("JARVIS WON", "Better luck next time. Drop a disc to rematch."),
-        "draw": ("DRAW", "Board is full. Drop a disc to start again."),
-    }[status]
-    s = st["stats"]
-    rx = 520
-    panel = [
-        f'<text class="mono" x="{rx}" y="94" font-size="10" letter-spacing="1.6" fill="#7E786B">STATUS</text>',
-        f'<text class="sans" x="{rx}" y="130" font-size="30" font-weight="700" fill="#F3EEE2">{msg}</text>',
-        f'<text class="mono" x="{rx}" y="152" font-size="10.5" fill="#9A9384">{sub}</text>',
-        f'<line x1="{rx}" y1="176" x2="920" y2="176" stroke="{GOLD}" stroke-opacity=".2"/>',
-    ]
-    for i, (lab, val, colr) in enumerate((("VISITORS", s["visitors"], GOLD), ("JARVIS", s["jarvis"], CRIM), ("DRAWS", s["draws"], "#B9B2A3"))):
-        x = rx + i * 133
-        panel.append(f'<text class="sans" x="{x}" y="222" font-size="34" font-weight="700" fill="#F3EEE2">{val}</text>')
-        panel.append(f'<circle cx="{x+4}" cy="238" r="3.5" fill="{colr}"/><text class="mono" x="{x+14}" y="242" font-size="10" letter-spacing="1.3" fill="{colr}">{lab}</text>')
-    panel += [
-        f'<line x1="{rx}" y1="268" x2="920" y2="268" stroke="{GOLD}" stroke-opacity=".2"/>',
-        f'<text class="mono" x="{rx}" y="296" font-size="10" letter-spacing="1.6" fill="#7E786B">HOW TO PLAY</text>',
-        f'<text class="mono" x="{rx}" y="320" font-size="11" fill="#D9D3C4"><tspan fill="{CRIM}">01</tspan>  Click a column badge under the board</text>',
-        f'<text class="mono" x="{rx}" y="341" font-size="11" fill="#D9D3C4"><tspan fill="{CRIM}">02</tspan>  Press "Submit new issue" (no edits)</text>',
-        f'<text class="mono" x="{rx}" y="362" font-size="11" fill="#D9D3C4"><tspan fill="{CRIM}">03</tspan>  Refresh after about a minute</text>',
-        f'<circle cx="{rx+4}" cy="388" r="4" fill="{GOLD}"/><text class="mono" x="{rx+14}" y="392" font-size="10" fill="#9A9384">YOU</text>',
-        f'<circle cx="{rx+74}" cy="388" r="4" fill="{CRIM}"/><text class="mono" x="{rx+84}" y="392" font-size="10" fill="#9A9384">JARVIS</text>',
-    ]
-    style = """
-.mono{font-family:'SFMono-Regular',Consolas,'Liberation Mono',monospace}
-.sans{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif}
-@keyframes dot{0%,100%{opacity:.4}50%{opacity:1}}
-@keyframes fall{from{transform:translateY(-320px);opacity:0}15%{opacity:1}70%{transform:translateY(6px)}85%{transform:translateY(-3px)}to{transform:none}}
-@keyframes win{0%,100%{opacity:.25}50%{opacity:1}}
-.dot{animation:dot 2.6s ease-in-out infinite}
-.fall{animation:fall .75s ease-in both}
-.winring{animation:win 1.4s ease-in-out infinite}
-"""
-    head = (
-        f'<circle class="dot" cx="34" cy="26" r="3.5" fill="{CRIM}"/>'
-        f'<text class="mono" x="46" y="30" font-size="11" letter-spacing="1.6" fill="{GOLD}">GAME MODE // CONNECT FOUR</text>'
-        f'<text class="mono" x="920" y="30" font-size="10.5" letter-spacing="1.6" fill="#7E786B" text-anchor="end">VISITORS VS JARVIS</text>'
-        f'<line x1="30" y1="46" x2="920" y2="46" stroke="{GOLD}" stroke-opacity=".25"/>'
-    )
-    return (
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}"><style>{style}</style>'
-        f'<rect width="{W}" height="{H}" rx="14" fill="{BG}"/>{head}{"".join(parts)}{"".join(panel)}'
-        f'<line x1="30" y1="{H-12}" x2="920" y2="{H-12}" stroke="{GOLD}" stroke-opacity=".25"/></svg>'
-    )
-
-
-def update_readme(st):
-    if not os.path.exists(README):
-        return
-    lines = [f"- {e}" for e in st["log"][-5:][::-1]] or ["- No moves yet. Be the first to play."]
-    s = open(README, encoding="utf-8").read()
-    a, b = "<!--C4_LOG:START-->", "<!--C4_LOG:END-->"
-    if a in s and b in s:
-        s = re.sub(re.escape(a) + r".*?" + re.escape(b), a + "\n" + "\n".join(lines) + "\n" + b, s, flags=re.S)
-        open(README, "w", encoding="utf-8").write(s)
-
-
-# ---------------- main ----------------
-def say(text):
-    open(COMMENT, "w", encoding="utf-8").write(text)
-    print(text)
-
+def fresh():
+    return {"board": [[0] * C for _ in range(R)], "status": "playing", "last": [], "win": [],
+            "score": {"visitor": 0, "jarvis": 0, "draw": 0}, "log": [], "version": 0, "games": 1}
 
 def load():
-    if os.path.exists(STATE):
-        return json.load(open(STATE, encoding="utf-8"))
-    return new_state()
+    try:
+        s = json.load(open(STATE)); base = fresh(); base.update(s); return base
+    except Exception:
+        return fresh()
 
+def save(s):
+    os.makedirs(os.path.dirname(STATE), exist_ok=True)
+    json.dump(s, open(STATE, "w"), indent=1)
 
-def save(st):
-    os.makedirs(os.path.dirname(STATE) or ".", exist_ok=True)
-    json.dump(st, open(STATE, "w", encoding="utf-8"), indent=1)
-    os.makedirs(os.path.dirname(SVG) or ".", exist_ok=True)
-    open(SVG, "w", encoding="utf-8").write(render(st))
-    update_readme(st)
+# ---------- game logic ----------
+def drop(b, col, p):
+    for r in range(R - 1, -1, -1):
+        if b[r][col] == 0:
+            b[r][col] = p; return r
+    return None
 
+def find_win(b, p):
+    for r in range(R):
+        for c in range(C):
+            if b[r][c] != p: continue
+            for dr, dc in ((0, 1), (1, 0), (1, 1), (1, -1)):
+                cells = [(r + k * dr, c + k * dc) for k in range(4)]
+                if all(0 <= y < R and 0 <= x < C and b[y][x] == p for y, x in cells):
+                    return cells
+    return None
+
+def full(b): return all(b[0][c] != 0 for c in range(C))
+ORDER = [3, 2, 4, 1, 5, 0, 6]
+
+def score_window(w, p):
+    o = 3 - p
+    if w.count(p) == 4: return 1000
+    if w.count(p) == 3 and w.count(0) == 1: return 6
+    if w.count(p) == 2 and w.count(0) == 2: return 2
+    if w.count(o) == 3 and w.count(0) == 1: return -8
+    return 0
+
+def heuristic(b, p):
+    s = sum(3 for r in range(R) if b[r][3] == p) - sum(3 for r in range(R) if b[r][3] == 3 - p)
+    for r in range(R):
+        for c in range(C):
+            for dr, dc in ((0, 1), (1, 0), (1, 1), (1, -1)):
+                cells = [(r + k * dr, c + k * dc) for k in range(4)]
+                if all(0 <= y < R and 0 <= x < C for y, x in cells):
+                    s += score_window([b[y][x] for y, x in cells], p)
+    return s
+
+def minimax(b, depth, alpha, beta, me, turn):
+    if find_win(b, me): return 100000 + depth, None
+    if find_win(b, 3 - me): return -100000 - depth, None
+    if full(b): return 0, None
+    if depth == 0: return heuristic(b, me), None
+    best_col = None
+    if turn == me:
+        best = -10 ** 9
+        for c in ORDER:
+            if b[0][c]: continue
+            r = drop(b, c, turn); v, _ = minimax(b, depth - 1, alpha, beta, me, 3 - turn); b[r][c] = 0
+            if v > best: best, best_col = v, c
+            alpha = max(alpha, best)
+            if alpha >= beta: break
+    else:
+        best = 10 ** 9
+        for c in ORDER:
+            if b[0][c]: continue
+            r = drop(b, c, turn); v, _ = minimax(b, depth - 1, alpha, beta, me, 3 - turn); b[r][c] = 0
+            if v < best: best, best_col = v, c
+            beta = min(beta, best)
+            if alpha >= beta: break
+    return best, best_col
+
+def bot_move(b):
+    _, col = minimax(b, 4, -10 ** 9, 10 ** 9, 2, 2)
+    if col is None or b[0][col]: col = next(c for c in ORDER if not b[0][c])
+    return col
+
+# ---------- rendering ----------
+def esc(x): return html.escape(str(x), quote=True)
+
+def render(s):
+    b = s["board"]; W, H = 760, 520
+    CELL, OX, OY = 62, 40, 96
+    last = {(m["row"], m["col"]): m["by"] for m in s.get("last", [])}
+    win = {tuple(x) for x in s.get("win", [])}
+    o = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="Connect Four board: visitors in gold versus JARVIS in crimson">']
+    o.append(f'<rect width="{W}" height="{H}" rx="10" fill="{BG}"/>')
+    o.append(f'<circle cx="40" cy="34" r="4" fill="{RED}"><animate attributeName="opacity" values="1;.35;1" dur="2.4s" repeatCount="indefinite"/></circle>')
+    o.append(f'<text x="54" y="38" font-family="{MONO}" font-size="11" letter-spacing="2.2" fill="{GOLD}">CONNECT FOUR · VISITORS vs JARVIS</text>')
+    o.append(f'<text x="720" y="38" text-anchor="end" font-family="{MONO}" font-size="11" letter-spacing="2.2" fill="{MUT}">GAME #{s["games"]}</text>')
+    o.append(f'<line x1="40" y1="52" x2="720" y2="52" stroke="{HAIR}"/>')
+    bw, bh = C * CELL, R * CELL
+    o.append(f'<rect x="{OX - 8}" y="{OY - 8}" width="{bw + 16}" height="{bh + 16}" rx="10" fill="#151518" stroke="{GOLD}" stroke-opacity=".5"/>')
+    for c in range(C):
+        o.append(f'<text x="{OX + c * CELL + CELL / 2}" y="{OY - 18}" text-anchor="middle" font-family="{MONO}" font-size="11" fill="{MUT}">{c + 1}</text>')
+    for r in range(R):
+        for c in range(C):
+            cx, cy = OX + c * CELL + CELL / 2, OY + r * CELL + CELL / 2
+            o.append(f'<circle cx="{cx}" cy="{cy}" r="24" fill="{BG}" stroke="{HAIR}"/>')
+            v = b[r][c]
+            if not v: continue
+            col = GOLD if v == 1 else RED
+            hi = GOLD2 if v == 1 else RED2
+            disc = f'<circle cx="{cx}" cy="{cy}" r="24" fill="{col}"/><circle cx="{cx}" cy="{cy}" r="18" fill="none" stroke="{hi}" stroke-opacity=".55"/>'
+            if (r, c) in last:
+                fall = OY + r * CELL + 40
+                o.append(f'<g>{disc}<animateTransform attributeName="transform" type="translate" from="0 -{fall}" to="0 0" dur="0.7s" begin="{0 if last[(r, c)] == "visitor" else 0.5}s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.7 1"/></g>')
+            else:
+                o.append(disc)
+            if (r, c) in win:
+                o.append(f'<circle cx="{cx}" cy="{cy}" r="27" fill="none" stroke="{TXT}" stroke-width="2"><animate attributeName="opacity" values="1;.25;1" dur="1.4s" repeatCount="indefinite"/></circle>')
+    # right panel
+    X = 520
+    st = s["status"]
+    head = {"playing": "YOUR MOVE", "visitor_win": "VISITOR WINS", "jarvis_win": "JARVIS WINS", "draw": "DRAW"}[st]
+    sub = "Pick a column below to drop a disc." if st == "playing" else "Drop any column to start a new game."
+    o.append(f'<text x="{X}" y="96" font-family="{MONO}" font-size="10.5" letter-spacing="1.4" fill="{GOLD}">STATUS</text>')
+    o.append(f'<text x="{X}" y="122" font-family="{SANS}" font-weight="700" font-size="22" fill="{TXT}">{head}</text>')
+    o.append(f'<text x="{X}" y="142" font-family="{MONO}" font-size="10" fill="{MUT}">{esc(sub)}</text>')
+    o.append(f'<line x1="{X}" y1="156" x2="720" y2="156" stroke="{HAIR}"/>')
+    o.append(f'<text x="{X}" y="182" font-family="{MONO}" font-size="10.5" letter-spacing="1.4" fill="{GOLD}">SCOREBOARD</text>')
+    for k, (lab, key, colr) in enumerate((("VISITORS", "visitor", GOLD), ("JARVIS", "jarvis", RED2), ("DRAWS", "draw", MUT))):
+        y = 212 + k * 34
+        o.append(f'<circle cx="{X + 6}" cy="{y - 5}" r="5" fill="{colr}"/>')
+        o.append(f'<text x="{X + 20}" y="{y}" font-family="{SANS}" font-weight="600" font-size="13" fill="{TXT}">{lab}</text>')
+        o.append(f'<text x="720" y="{y}" text-anchor="end" font-family="{SANS}" font-weight="700" font-size="18" fill="{TXT}">{s["score"][key]}</text>')
+    o.append(f'<line x1="{X}" y1="306" x2="720" y2="306" stroke="{HAIR}"/>')
+    o.append(f'<text x="{X}" y="332" font-family="{MONO}" font-size="10.5" letter-spacing="1.4" fill="{GOLD}">LAST MOVES</text>')
+    lm = s["log"][-3:][::-1]
+    if not lm:
+        o.append(f'<text x="{X}" y="358" font-family="{MONO}" font-size="10.5" fill="{MUT}">No moves yet. Be the first.</text>')
+    for k, m in enumerate(lm):
+        o.append(f'<text x="{X}" y="{358 + k * 22}" font-family="{MONO}" font-size="10.5" fill="{TXT}">@{esc(m["user"][:18])} → col {m["col"]}</text>')
+        o.append(f'<text x="720" y="{358 + k * 22}" text-anchor="end" font-family="{MONO}" font-size="10.5" fill="{MUT}">JARVIS → {m["bot"]}</text>' if m.get("bot") else "")
+    o.append(f'<text x="40" y="504" font-family="{MONO}" font-size="9.5" letter-spacing="1.2" fill="{MUT}">GOLD = VISITORS · CRIMSON = JARVIS · CONNECT FOUR IN A ROW TO WIN</text>')
+    o.append("</svg>")
+    return "\n".join(x for x in o if x)
+
+def update_readme(s):
+    if not os.path.exists(README): return
+    t = open(README, encoding="utf-8").read()
+    img = f'<img src="./assets/connect4.svg?v={s["version"]}" alt="Connect Four board" width="100%"/>'
+    t = re.sub(r"<!--C4_BOARD:START-->.*?<!--C4_BOARD:END-->", lambda m: f"<!--C4_BOARD:START-->{img}<!--C4_BOARD:END-->", t, flags=re.S)
+    if s["log"]:
+        lines = [f'- `@{m["user"]}` dropped in column **{m["col"]}**' + (f' · JARVIS replied in column **{m["bot"]}**' if m.get("bot") else "") for m in s["log"][-5:][::-1]]
+    else:
+        lines = ["_No moves yet. Be the first to play!_"]
+    t = re.sub(r"<!--C4_LOG:START-->.*?<!--C4_LOG:END-->", lambda m: "<!--C4_LOG:START-->\n" + "\n".join(lines) + "\n<!--C4_LOG:END-->", t, flags=re.S)
+    open(README, "w", encoding="utf-8").write(t)
+
+def write_all(s):
+    open(BOARD_SVG, "w", encoding="utf-8").write(render(s)); update_readme(s)
+
+def finish(result, msg):
+    open(COMMENT, "w").write(msg + "\n")
+    out = os.environ.get("GITHUB_OUTPUT")
+    if out: open(out, "a").write(f"result={result}\n")
+    print(result, "-", msg)
 
 def main():
     if "--init" in sys.argv:
-        save(new_state()); return
-    title = os.environ.get("ISSUE_TITLE", "").strip()
-    user = re.sub(r"[^A-Za-z0-9-]", "", os.environ.get("ISSUE_USER", "someone")) or "someone"
-    st = load()
-
+        s = load(); save(s); write_all(s); return 0
+    title = (os.environ.get("ISSUE_TITLE") or "").strip()
+    user = re.sub(r"[^A-Za-z0-9-]", "", os.environ.get("ISSUE_USER") or "visitor")[:39] or "visitor"
+    m = re.fullmatch(r"c4\|(drop\|([1-7])|new)", title)
+    if not m: return finish("error", "I only understand the move buttons on the profile (`c4|drop|1..7` or `c4|new`). Please use those.") or 0
+    s = load()
     if title == "c4|new":
-        st = new_state(st["stats"]); st["log"] = st["log"][-4:] + [f"@{user} started a new game"]
-        save(st); say("New game started. Pick a column!"); return
-
-    m = re.fullmatch(r"c4\|drop\|([1-7])", title)
-    if not m:
-        say("Sorry, I could not read that move. Please use the column badges in the README without editing the title.")
-        return
-    col = int(m.group(1)) - 1
-
-    if st["status"] != "playing":
-        st = new_state(st["stats"]) | {"log": st["log"]}
-    board = st["board"]
-    if board[0][col] != 0:
-        say(f"Column {col+1} is full. Try another one."); return
-
-    r = drop(board, col, 1)
-    st["last"] = [[r, col]]
-    st["win"] = []
-    w, cells = find_win(board)
-    entry = f"@{user} dropped in column {col+1}"
-    if w == 1:
-        st["status"], st["win"] = "won", [list(x) for x in cells]
-        st["stats"]["visitors"] += 1; st["stats"]["games"] += 1
-        entry += " and **won**"
-    elif not valid(board):
-        st["status"] = "draw"; st["stats"]["draws"] += 1; st["stats"]["games"] += 1
-        entry += " (draw)"
+        if s["status"] == "playing" and any(any(row) for row in s["board"]):
+            return finish("error", "A game is still in progress. Finish it first (drop a disc in any column).") or 0
+        s["board"] = fresh()["board"]; s["status"] = "playing"; s["last"] = []; s["win"] = []; s["games"] += 1
+        s["version"] += 1; save(s); write_all(s)
+        return finish("ok", "New game started. Your move!") or 0
+    col = int(m.group(2)) - 1
+    if s["status"] != "playing":
+        s["board"] = fresh()["board"]; s["status"] = "playing"; s["last"] = []; s["win"] = []; s["games"] += 1
+    b = s["board"]
+    if b[0][col]:
+        return finish("error", f"Column {col + 1} is full. Pick another column.") or 0
+    r = drop(b, col, 1); s["last"] = [{"by": "visitor", "row": r, "col": col}]; s["win"] = []
+    entry = {"user": user, "col": col + 1}
+    msg = f"@{user} dropped a disc in column **{col + 1}**."
+    w = find_win(b, 1)
+    if w:
+        s["status"], s["win"] = "visitor_win", [list(x) for x in w]; s["score"]["visitor"] += 1
+        msg += " **You win!** Drop in any column to start a new game."
+    elif full(b):
+        s["status"] = "draw"; s["score"]["draw"] += 1; msg += " It's a draw!"
     else:
-        jc = jarvis_move(board)
-        jr = drop(board, jc, 2)
-        st["last"].append([jr, jc])
-        entry += f", JARVIS answered in column {jc+1}"
-        w, cells = find_win(board)
-        if w == 2:
-            st["status"], st["win"] = "lost", [list(x) for x in cells]
-            st["stats"]["jarvis"] += 1; st["stats"]["games"] += 1
-            entry += " and **won**"
-        elif not valid(board):
-            st["status"] = "draw"; st["stats"]["draws"] += 1; st["stats"]["games"] += 1
-            entry += " (draw)"
-    st["log"] = (st["log"] + [entry])[-20:]
-    save(st)
-    final = {"playing": "Your move!", "won": "You won! Drop another disc to play again.",
-             "lost": "JARVIS won this round. Drop another disc for a rematch.", "draw": "It is a draw."}[st["status"]]
-    say(f"{entry.replace('**', '')}. {final}\n\nThe board in the README updates in about a minute.")
+        bc = bot_move(b); br = drop(b, bc, 2)
+        s["last"].append({"by": "jarvis", "row": br, "col": bc}); entry["bot"] = bc + 1
+        msg += f" JARVIS replied in column **{bc + 1}**."
+        w = find_win(b, 2)
+        if w:
+            s["status"], s["win"] = "jarvis_win", [list(x) for x in w]; s["score"]["jarvis"] += 1
+            msg += " **JARVIS wins.** Drop in any column to try again."
+        elif full(b):
+            s["status"] = "draw"; s["score"]["draw"] += 1; msg += " It's a draw!"
+    s["log"] = (s["log"] + [entry])[-10:]; s["version"] += 1
+    save(s); write_all(s)
+    msg += "\n\nThe board updates on the profile in a minute or two (GitHub caches images)."
+    return finish("ok", msg) or 0
 
-
-if __name__ == "__main__":
-    main()
+if __name__ == "__main__": sys.exit(main())

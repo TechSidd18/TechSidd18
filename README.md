@@ -148,7 +148,7 @@ Community: Codester Club (Creative Head)
 
 <div align="center">
 
-<!--C4_BOARD:START--><img src="./assets/connect4.svg?v=0" alt="Connect Four board" width="100%"/><!--C4_BOARD:END-->
+<!--C4_BOARD:START--><img src="./assets/connect4.svg?v=1" alt="Connect Four board" width="100%"/><!--C4_BOARD:END-->
 
 <a href="https://github.com/TechSidd18/TechSidd18/issues/new?title=c4%7Cdrop%7C1&body=Just+press+%22Submit+new+issue%22.+Do+not+edit+the+title."><img src="https://img.shields.io/badge/DROP-1-1F1F22?style=for-the-badge&labelColor=A4161A" alt="Drop in column 1"/></a>
 <a href="https://github.com/TechSidd18/TechSidd18/issues/new?title=c4%7Cdrop%7C2&body=Just+press+%22Submit+new+issue%22.+Do+not+edit+the+title."><img src="https://img.shields.io/badge/DROP-2-1F1F22?style=for-the-badge&labelColor=A4161A" alt="Drop in column 2"/></a>
@@ -165,7 +165,7 @@ Community: Codester Club (Creative Head)
 **Recent moves**
 
 <!--C4_LOG:START-->
-_No moves yet. Be the first to play!_
+- `@TechSidd18` dropped in column **4** · JARVIS replied in column **4**
 <!--C4_LOG:END-->
 
 ---

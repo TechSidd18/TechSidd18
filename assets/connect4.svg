@@ -44,6 +44,7 @@
 <circle cx="133.0" cy="375.0" r="24" fill="#0D0D0F" stroke="#2A2620"/>
 <circle cx="195.0" cy="375.0" r="24" fill="#0D0D0F" stroke="#2A2620"/>
 <circle cx="257.0" cy="375.0" r="24" fill="#0D0D0F" stroke="#2A2620"/>
+<g><circle cx="257.0" cy="375.0" r="24" fill="#A4161A"/><circle cx="257.0" cy="375.0" r="18" fill="none" stroke="#C8242A" stroke-opacity=".55"/><animateTransform attributeName="transform" type="translate" from="0 -384" to="0 0" dur="0.7s" begin="0.5s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.7 1"/></g>
 <circle cx="319.0" cy="375.0" r="24" fill="#0D0D0F" stroke="#2A2620"/>
 <circle cx="381.0" cy="375.0" r="24" fill="#0D0D0F" stroke="#2A2620"/>
 <circle cx="443.0" cy="375.0" r="24" fill="#0D0D0F" stroke="#2A2620"/>
@@ -51,6 +52,7 @@
 <circle cx="133.0" cy="437.0" r="24" fill="#0D0D0F" stroke="#2A2620"/>
 <circle cx="195.0" cy="437.0" r="24" fill="#0D0D0F" stroke="#2A2620"/>
 <circle cx="257.0" cy="437.0" r="24" fill="#0D0D0F" stroke="#2A2620"/>
+<g><circle cx="257.0" cy="437.0" r="24" fill="#C8A45C"/><circle cx="257.0" cy="437.0" r="18" fill="none" stroke="#E6C77E" stroke-opacity=".55"/><animateTransform attributeName="transform" type="translate" from="0 -446" to="0 0" dur="0.7s" begin="0s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.7 1"/></g>
 <circle cx="319.0" cy="437.0" r="24" fill="#0D0D0F" stroke="#2A2620"/>
 <circle cx="381.0" cy="437.0" r="24" fill="#0D0D0F" stroke="#2A2620"/>
 <circle cx="443.0" cy="437.0" r="24" fill="#0D0D0F" stroke="#2A2620"/>
@@ -70,6 +72,7 @@
 <text x="720" y="280" text-anchor="end" font-family="'Segoe UI',-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="18" fill="#E8E6E1">0</text>
 <line x1="520" y1="306" x2="720" y2="306" stroke="#2A2620"/>
 <text x="520" y="332" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="10.5" letter-spacing="1.4" fill="#C8A45C">LAST MOVES</text>
-<text x="520" y="358" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#8C867A">No moves yet. Be the first.</text>
+<text x="520" y="358" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#E8E6E1">@TechSidd18 → col 4</text>
+<text x="720" y="358" text-anchor="end" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#8C867A">JARVIS → 4</text>
 <text x="40" y="504" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="9.5" letter-spacing="1.2" fill="#8C867A">GOLD = VISITORS · CRIMSON = JARVIS · CONNECT FOUR IN A ROW TO WIN</text>
 </svg>

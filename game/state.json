@@ -40,7 +40,7 @@
    0,
    0,
    0,
-   0,
+   2,
    0,
    0,
    0
@@ -49,7 +49,7 @@
    0,
    0,
    0,
-   0,
+   1,
    0,
    0,
    0
@@ -62,7 +62,18 @@
   "jarvis": 0,
   "draws": 0
  },
- "log": [],
- "last": [],
+ "log": [
+  "@TechSidd18 dropped in column 4, JARVIS answered in column 4"
+ ],
+ "last": [
+  [
+   5,
+   3
+  ],
+  [
+   4,
+   3
+  ]
+ ],
  "win": []
 }

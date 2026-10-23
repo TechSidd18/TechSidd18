@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 280" width="1000" height="280">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0E0E10"/>
+      <stop offset="0.6" stop-color="#141214"/>
+      <stop offset="1" stop-color="#1B1011"/>
+    </linearGradient>
+    <radialGradient id="warm" cx="82%" cy="50%" r="45%">
+      <stop offset="0" stop-color="#C8A45C" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#0E0E10" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="title" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#F3EEE2"/>
+      <stop offset="1" stop-color="#C8A45C"/>
+    </linearGradient>
+    <linearGradient id="topline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#A4161A" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#C8A45C"/>
+      <stop offset="1" stop-color="#A4161A" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip"><rect width="1000" height="280" rx="14"/></clipPath>
+  </defs>
+  <style>
+    .sans{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif}
+    .mono{font-family:'SFMono-Regular',Consolas,'Liberation Mono',monospace}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @keyframes spinr{to{transform:rotate(-360deg)}}
+    @keyframes breathe{0%,100%{opacity:.75}50%{opacity:1}}
+    @keyframes sweep{0%{transform:translateX(-120px);opacity:0}15%{opacity:.5}85%{opacity:.5}100%{transform:translateX(1120px);opacity:0}}
+    @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+    .r1{transform-origin:820px 140px;animation:spin 40s linear infinite}
+    .r2{transform-origin:820px 140px;animation:spinr 26s linear infinite}
+    .core{animation:breathe 3.5s ease-in-out infinite}
+    .sweep{animation:sweep 9s ease-in-out infinite}
+    .a1{animation:rise .9s ease-out both}
+    .a2{animation:rise .9s ease-out .2s both}
+    .a3{animation:rise .9s ease-out .4s both}
+    .a4{animation:rise .9s ease-out .6s both}
+  </style>
+  <g clip-path="url(#clip)">
+    <rect width="1000" height="280" fill="url(#bg)"/>
+    <rect width="1000" height="280" fill="url(#warm)"/>
+    <!-- faint HUD grid lines -->
+    <g stroke="#C8A45C" stroke-opacity="0.06">
+      <line x1="0" y1="70" x2="1000" y2="70"/><line x1="0" y1="140" x2="1000" y2="140"/><line x1="0" y1="210" x2="1000" y2="210"/>
+      <line x1="500" y1="0" x2="500" y2="280"/><line x1="700" y1="0" x2="700" y2="280"/>
+    </g>
+    <rect class="sweep" x="0" y="0" width="2" height="280" fill="#C8A45C"/>
+    <rect width="1000" height="2" fill="url(#topline)"/>
+  </g>
+  <rect x="0.5" y="0.5" width="999" height="279" rx="14" fill="none" stroke="#C8A45C" stroke-opacity="0.22"/>
+
+  <!-- Left text -->
+  <g transform="translate(56,52)">
+    <g class="a1">
+      <circle cx="4" cy="8" r="3" fill="#A4161A"/>
+      <text x="16" y="12" class="mono" font-size="11" letter-spacing="2" fill="#C8A45C">DATA ANALYST  &#183;  SQL  &#183;  POWER BI</text>
+    </g>
+    <text class="sans a2" x="0" y="82" font-size="50" font-weight="700" fill="url(#title)" letter-spacing="-1">Siddhant Deep</text>
+    <text class="sans a3" x="2" y="112" font-size="14.5" font-weight="500" fill="#B9B2A3">SQL  <tspan fill="#A4161A">&#183;</tspan>  Power BI  <tspan fill="#A4161A">&#183;</tspan>  Excel  <tspan fill="#A4161A">&#183;</tspan>  Python  <tspan fill="#A4161A">&#183;</tspan>  IBM Cognos Analytics</text>
+    <text class="sans a3" x="2" y="138" font-size="12.5" fill="#847D70">Turning raw data into clear, actionable KPI dashboards &amp; analytical insights.</text>
+    <g class="a4">
+      <line x1="2" y1="162" x2="420" y2="162" stroke="#C8A45C" stroke-opacity="0.25"/>
+      <text class="mono" x="2" y="186" font-size="11" fill="#C8A45C"><tspan fill="#A4161A">&#9656;</tspan> Creative Head @ Codester</text>
+      <text class="mono" x="222" y="186" font-size="11" fill="#B9B2A3"><tspan fill="#A4161A">&#9656;</tspan> Data &amp; BI Pipelines</text>
+      <text class="mono" x="2" y="208" font-size="11" fill="#B9B2A3"><tspan fill="#A4161A">&#9656;</tspan> Python &#183; SQL &#183; Power BI</text>
+    </g>
+  </g>
+
+  <!-- Arc reactor -->
+  <g>
+    <circle cx="820" cy="140" r="104" fill="none" stroke="#C8A45C" stroke-opacity="0.18"/>
+    <g class="r1">
+      <circle cx="820" cy="140" r="92" fill="none" stroke="#C8A45C" stroke-opacity="0.55" stroke-width="3" stroke-dasharray="46 12"/>
+    </g>
+    <g class="r2">
+      <circle cx="820" cy="140" r="72" fill="none" stroke="#A4161A" stroke-opacity="0.8" stroke-width="1.6" stroke-dasharray="3 7"/>
+      <circle cx="820" cy="68" r="3" fill="#C8A45C"/>
+    </g>
+    <circle cx="820" cy="140" r="56" fill="#0E0E10" stroke="#C8A45C" stroke-opacity="0.6" stroke-width="1.4"/>
+    <!-- coil segments -->
+    <g stroke="#C8A45C" stroke-opacity="0.7" stroke-width="7" stroke-linecap="butt" fill="none">
+      <path d="M820 96 a44 44 0 0 1 14 2.3"/><path d="M820 96 a44 44 0 0 1 14 2.3" transform="rotate(40 820 140)"/>
+      <path d="M820 96 a44 44 0 0 1 14 2.3" transform="rotate(80 820 140)"/><path d="M820 96 a44 44 0 0 1 14 2.3" transform="rotate(120 820 140)"/>
+      <path d="M820 96 a44 44 0 0 1 14 2.3" transform="rotate(160 820 140)"/><path d="M820 96 a44 44 0 0 1 14 2.3" transform="rotate(200 820 140)"/>
+      <path d="M820 96 a44 44 0 0 1 14 2.3" transform="rotate(240 820 140)"/><path d="M820 96 a44 44 0 0 1 14 2.3" transform="rotate(280 820 140)"/>
+      <path d="M820 96 a44 44 0 0 1 14 2.3" transform="rotate(320 820 140)"/>
+    </g>
+    <circle cx="820" cy="140" r="30" fill="none" stroke="#C8A45C" stroke-opacity="0.5"/>
+    <g class="core">
+      <circle cx="820" cy="140" r="22" fill="#F1E3B8" fill-opacity="0.16"/>
+      <circle cx="820" cy="140" r="14" fill="#F1E3B8" fill-opacity="0.9"/>
+      <circle cx="820" cy="140" r="6" fill="#FFF8E6"/>
+    </g>
+    <!-- crosshair ticks -->
+    <g stroke="#C8A45C" stroke-opacity="0.45">
+      <line x1="820" y1="22" x2="820" y2="34"/><line x1="820" y1="246" x2="820" y2="258"/>
+      <line x1="702" y1="140" x2="714" y2="140"/><line x1="926" y1="140" x2="938" y2="140"/>
+    </g>
+  </g>
+  <text x="944" y="262" class="mono" font-size="9.5" fill="#847D70" text-anchor="end" letter-spacing="1.5">ONLINE</text>
+  <circle cx="954" cy="259" r="3" fill="#A4161A" class="core"/>
+</svg>

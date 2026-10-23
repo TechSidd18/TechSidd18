@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 280" width="950" height="280">
+  <defs>
+    <!-- Card Gradients -->
+    <linearGradient id="tileBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f1322"/>
+      <stop offset="100%" stop-color="#090b14"/>
+    </linearGradient>
+
+    <!-- Accent Gradients -->
+    <linearGradient id="purpleBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+
+    <linearGradient id="cyanBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+
+    <linearGradient id="monogram" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;family=Fira+Code:wght@500;600&amp;display=swap');
+    .title-font { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+    .mono-font { font-family: 'Fira Code', monospace; }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="950" height="280" rx="14" fill="#04050a"/>
+
+  <!-- ================= BENTO BOX 1: CORE IDENTITY (X: 10, Y: 10, W: 350, H: 260) ================= -->
+  <g transform="translate(10, 10)">
+    <rect width="350" height="260" rx="12" fill="url(#tileBg)" stroke="#1E293B" stroke-width="1"/>
+    
+    <!-- Monogram Circle -->
+    <circle cx="44" cy="44" r="22" fill="url(#monogram)"/>
+    <text x="44" y="50" class="title-font" font-size="14" font-weight="800" fill="#FFFFFF" text-anchor="middle">SD</text>
+
+    <!-- Name & Status -->
+    <text x="80" y="40" class="title-font" font-size="16" font-weight="800" fill="#FFFFFF">Siddhant Deep</text>
+    <text x="80" y="58" class="title-font" font-size="12" font-weight="600" fill="#6366F1">Creative Head, Codester Club</text>
+
+    <!-- Bio Statement -->
+    <text x="24" y="96" class="title-font" font-size="12" font-weight="500" fill="#94A3B8">
+      Data Analyst &amp; BCA Undergrad.
+    </text>
+    <text x="24" y="114" class="title-font" font-size="12" font-weight="500" fill="#94A3B8">
+      Hands-on in SQL, Power BI, Excel &amp; Python.
+    </text>
+    <text x="24" y="132" class="title-font" font-size="12" font-weight="500" fill="#94A3B8">
+      Data cleaning, exploratory analysis &amp; KPI metrics.
+    </text>
+
+    <!-- Credentials Tags -->
+    <g transform="translate(24, 154)">
+      <rect x="0" y="0" width="302" height="30" rx="6" fill="#0F172A" stroke="#334155" stroke-width="0.75"/>
+      <text x="14" y="19" class="mono-font" font-size="10.5" fill="#E2E8F0">
+        &#127891; BCA (Computer Applications) <tspan fill="#38BDF8">&#183; 8.54 CGPA</tspan>
+      </text>
+    </g>
+
+    <g transform="translate(24, 192)">
+      <rect x="0" y="0" width="302" height="30" rx="6" fill="#0F172A" stroke="#334155" stroke-width="0.75"/>
+      <text x="14" y="19" class="mono-font" font-size="10.5" fill="#E2E8F0">
+        &#128188; Data Science Intern <tspan fill="#A855F7">@ SkillCraft Tech</tspan>
+      </text>
+    </g>
+
+    <g transform="translate(24, 232)">
+      <circle cx="6" cy="6" r="3" fill="#10B981"/>
+      <text x="16" y="10" class="mono-font" font-size="10.5" font-weight="600" fill="#10B981">
+        Freelance Graphic Designer (5+ Clients)
+      </text>
+    </g>
+  </g>
+
+  <!-- ================= BENTO BOX 2: SQL & DATABASE (X: 370, Y: 10, W: 310, H: 125) ================= -->
+  <g transform="translate(370, 10)">
+    <rect width="310" height="125" rx="12" fill="url(#tileBg)" stroke="#1E293B" stroke-width="1"/>
+    
+    <text x="22" y="30" class="title-font" font-size="14" font-weight="700" fill="#FFFFFF">SQL &amp; Relational Analytics</text>
+    <text x="22" y="48" class="mono-font" font-size="10.5" fill="#64748B">PostgreSQL &#183; Supabase &#183; IBM Cognos</text>
+
+    <!-- Skill Bar -->
+    <g transform="translate(22, 64)">
+      <text x="0" y="12" class="title-font" font-size="11" font-weight="600" fill="#94A3B8">JOINs, CTEs, Window Functions</text>
+      <text x="266" y="12" class="mono-font" font-size="11" font-weight="700" fill="#38BDF8" text-anchor="end">Advanced</text>
+      <rect x="0" y="18" width="266" height="7" rx="3.5" fill="#1E293B"/>
+      <rect x="0" y="18" width="255" height="7" rx="3.5" fill="url(#cyanBar)"/>
+    </g>
+
+    <text x="22" y="108" class="mono-font" font-size="10" fill="#38BDF8">
+      &#10022; Project: EMI Stress Test in PostgreSQL
+    </text>
+  </g>
+
+  <!-- ================= BENTO BOX 3: POWER BI & KPI DASHBOARDS (X: 370, Y: 145, W: 310, H: 125) ================= -->
+  <g transform="translate(370, 145)">
+    <rect width="310" height="125" rx="12" fill="url(#tileBg)" stroke="#1E293B" stroke-width="1"/>
+    
+    <text x="22" y="30" class="title-font" font-size="14" font-weight="700" fill="#FFFFFF">Power BI &amp; Excel Modeling</text>
+    <text x="22" y="48" class="mono-font" font-size="10.5" fill="#64748B">KPI Dashboards &#183; Funnel &amp; Root Cause</text>
+
+    <!-- Skill Bar -->
+    <g transform="translate(22, 64)">
+      <text x="0" y="12" class="title-font" font-size="11" font-weight="600" fill="#94A3B8">Data Storytelling &amp; Visualizations</text>
+      <text x="266" y="12" class="mono-font" font-size="11" font-weight="700" fill="#A855F7" text-anchor="end">Production</text>
+      <rect x="0" y="18" width="266" height="7" rx="3.5" fill="#1E293B"/>
+      <rect x="0" y="18" width="250" height="7" rx="3.5" fill="url(#purpleBar)"/>
+    </g>
+
+    <text x="22" y="108" class="mono-font" font-size="10" fill="#A855F7">
+      &#10022; Project: College Event RSVP &amp; Distraction EDA
+    </text>
+  </g>
+
+  <!-- ================= BENTO BOX 4: HONORS & STACK (X: 690, Y: 10, W: 250, H: 260) ================= -->
+  <g transform="translate(690, 10)">
+    <rect width="250" height="260" rx="12" fill="url(#tileBg)" stroke="#1E293B" stroke-width="1"/>
+    
+    <text x="20" y="30" class="title-font" font-size="14" font-weight="700" fill="#FFFFFF">Honors &amp; Arenas</text>
+    <text x="20" y="48" class="mono-font" font-size="10.5" fill="#64748B">National &amp; College Milestones</text>
+
+    <!-- Hackathon & Awards List -->
+    <g transform="translate(18, 64)">
+      <!-- Item 1: SIH -->
+      <rect x="0" y="0" width="214" height="34" rx="6" fill="#0F172A" stroke="#1E293B" stroke-width="0.8"/>
+      <text x="10" y="16" class="title-font" font-size="11" font-weight="700" fill="#FBBF24">&#127942; SIH 2026: 10th Rank</text>
+      <text x="10" y="28" class="mono-font" font-size="9" fill="#94A3B8">SIH 2025: 28th Position (Team)</text>
+
+      <!-- Item 2: Evolothon -->
+      <rect x="0" y="42" width="214" height="34" rx="6" fill="#0F172A" stroke="#1E293B" stroke-width="0.8"/>
+      <text x="10" y="16" class="title-font" font-size="11" font-weight="700" fill="#38BDF8">&#9889; Evolothon 1.0 (2026)</text>
+      <text x="10" y="28" class="mono-font" font-size="9" fill="#94A3B8">Top 94 / 900+ Teams Worldwide</text>
+
+      <!-- Item 3: College Events -->
+      <rect x="0" y="84" width="214" height="34" rx="6" fill="#0F172A" stroke="#1E293B" stroke-width="0.8"/>
+      <text x="10" y="16" class="title-font" font-size="11" font-weight="700" fill="#A855F7">&#129351; College Tech Events</text>
+      <text x="10" y="28" class="mono-font" font-size="9" fill="#94A3B8">1st Runner-Up &amp; 2nd Runner-Up</text>
+
+      <!-- Item 4: AI Space -->
+      <rect x="0" y="126" width="214" height="34" rx="6" fill="#0F172A" stroke="#1E293B" stroke-width="0.8"/>
+      <text x="10" y="16" class="title-font" font-size="11" font-weight="700" fill="#10B981">&#129302; Kanpur AI Space</text>
+      <text x="10" y="28" class="mono-font" font-size="9" fill="#94A3B8">Python &amp; AI Agents Workshop</text>
+    </g>
+
+    <!-- Bottom Tag -->
+    <g transform="translate(18, 236)">
+      <circle cx="6" cy="6" r="3" fill="#6366F1"/>
+      <text x="16" y="10" class="mono-font" font-size="9.5" fill="#94A3B8">
+        ICONSDG-2025 Volunteer
+      </text>
+    </g>
+  </g>
+</svg>

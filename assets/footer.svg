@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 70" width="950" height="70" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#A4161A" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#C8A45C" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#A4161A" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <style>
+    @keyframes drift{from{transform:translateX(0)}to{transform:translateX(-475px)}}
+    .w{animation:drift 14s linear infinite}
+    .w2{animation:drift 22s linear infinite}
+  </style>
+  <rect width="950" height="70" fill="#0E0E10"/>
+  <g class="w2" opacity=".35"><path d="M0 40 Q 118 20 237 40 T 475 40 T 712 40 T 950 40 T 1187 40 T 1425 40" fill="none" stroke="#A4161A" stroke-width="1.4"/></g>
+  <g class="w" opacity=".8"><path d="M0 46 Q 118 30 237 46 T 475 46 T 712 46 T 950 46 T 1187 46 T 1425 46" fill="none" stroke="#C8A45C" stroke-width="1.2"/></g>
+  <rect width="950" height="2" y="0" fill="url(#g)"/>
+  <text x="475" y="64" text-anchor="middle" font-family="'SFMono-Regular',Consolas,monospace" font-size="9.5" letter-spacing="3" fill="#7E786B">SIDDHANT DEEP</text>
+</svg>

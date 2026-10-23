@@ -130,11 +130,7 @@ Community: Codester Club (Creative Head)
 
 <img src="./assets/activity-pulse.svg" alt="Activity Waveform" width="100%"/>
 
-<img src="https://raw.githubusercontent.com/TechSidd18/TechSidd18/output/github-snake.svg" alt="Contribution snake" width="100%"/>
-
-<br/><br/>
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=TechSidd18&bg_color=0E0E10&color=C8A45C&line=A4161A&point=E7E2D8&area=true&area_color=A4161A&hide_border=true&title_color=C8A45C" width="100%"/>
+<img src="./assets/jarvis-hud.svg" alt="JARVIS system diagnostics" width="100%"/>
 
 </div>
 
@@ -150,6 +146,6 @@ Community: Codester Club (Creative Head)
 
 <br/><br/>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0E0E10,50:6E1216,100:0E0E10&height=90&section=footer" width="100%"/>
+<img src="./assets/footer.svg" alt="footer" width="100%"/>
 
 </div>

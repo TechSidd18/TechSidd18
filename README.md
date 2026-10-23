@@ -2,7 +2,7 @@
 
 <img src="./assets/header.svg" alt="Siddhant Deep - Data Analyst &amp; Developer" width="100%"/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Plus+Jakarta+Sans&weight=700&size=16&duration=2400&pause=900&color=C8A45C&center=true&vCenter=true&width=750&lines=Data+Analyst+%C2%B7+SQL+%C2%B7+Power+BI+%C2%B7+Excel+%C2%B7+Python;Turning+raw+data+into+actionable+KPI+dashboards;Creative+Head+%40+Codester+Club;Building+interactive+dashboards+%26+data+pipelines" alt="Siddhant Deep Showcase"/>
+<img src="./assets/typing.svg" alt="Siddhant Deep Showcase" width="640"/>
 
 <p>
   <a href="mailto:deepsiddhant03@gmail.com"><img src="https://img.shields.io/badge/Email-deepsiddhant03%40gmail.com-1F1F22?style=for-the-badge&labelColor=A4161A&logo=gmail&logoColor=white"/></a>
@@ -10,7 +10,7 @@
   <a href="https://github.com/TechSidd18"><img src="https://img.shields.io/badge/GitHub-TechSidd18-1F1F22?style=for-the-badge&labelColor=A4161A&logo=github&logoColor=white"/></a>
 </p>
 
-<img src="https://komarev.com/ghpvc/?username=TechSidd18&style=for-the-badge&color=A4161A&labelColor=1F1F22&label=PROFILE+VIEWS"/>
+<img src="https://img.shields.io/github/followers/TechSidd18?style=for-the-badge&label=FOLLOWERS&color=1F1F22&labelColor=A4161A&logo=github&logoColor=C8A45C"/>
 
 </div>
 

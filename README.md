@@ -124,15 +124,57 @@ Community: Codester Club (Creative Head)
 ---
 
 
+### 💻 CODE MODE
+
+<div align="center">
+
+<img src="./assets/sql-terminal.svg" alt="SQL query typing animation" width="100%"/>
+
+</div>
+
+---
+
+### 🔄 DATA PIPELINE
+
+<div align="center">
+
+<img src="./assets/pipeline.svg" alt="Data pipeline: raw data to insights" width="100%"/>
+
+</div>
+
+---
+
+### 🏆 HONORS &amp; ARENAS
+
+<div align="center">
+
+<img src="./assets/honors.svg" alt="Honors and achievements" width="100%"/>
+
+</div>
+
+---
+
 ### 📊 ACTIVITY &amp; STATS
 
 <div align="center">
 
 <img src="./assets/activity-pulse.svg" alt="Activity Waveform" width="100%"/>
 
+<img src="./assets/stats.svg" alt="GitHub stats" width="100%"/>
+
+<img src="./assets/candles.svg" alt="Contribution candlestick chart" width="100%"/>
+
+<img src="./assets/languages.svg" alt="Top languages" width="100%"/>
+
 <img src="./assets/jarvis-hud.svg" alt="JARVIS system diagnostics" width="100%"/>
 
 </div>
+
+#### 🛰️ RECENT ACTIVITY
+
+<!--RECENT_ACTIVITY:START-->
+- Activity feed updates automatically after the first workflow run.
+<!--RECENT_ACTIVITY:END-->
 
 ---
 

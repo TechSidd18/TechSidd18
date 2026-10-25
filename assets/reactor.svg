@@ -90,7 +90,7 @@
 <line x1="560" y1="242" x2="960" y2="242" stroke="#2A2620"/>
 <rect x="546" y="250" width="3" height="34" fill="#A4161A" opacity=".7"/>
 <text x="560" y="264" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="10.5" letter-spacing="1.4" fill="#C8A45C">CURRENT STREAK</text>
-<text x="560" y="286" font-family="'Segoe UI',-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="22" fill="#E8E6E1">2</text>
+<text x="560" y="286" font-family="'Segoe UI',-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="22" fill="#E8E6E1">0</text>
 <text x="960" y="286" text-anchor="end" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#8C867A">days</text>
 <line x1="560" y1="298" x2="960" y2="298" stroke="#2A2620"/>
 <rect x="546" y="306" width="3" height="34" fill="#A4161A" opacity=".7"/>
@@ -100,7 +100,7 @@
 <line x1="560" y1="354" x2="960" y2="354" stroke="#2A2620"/>
 <text x="560" y="382" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="10.5" letter-spacing="1.4" fill="#C8A45C">LAST 30 DAYS</text>
 <line x1="560" y1="442" x2="960" y2="442" stroke="#2A2620"/>
-<rect x="562.0" y="421.7" width="9.3" height="20.3" fill="#C8A45C"><animate attributeName="opacity" values="1;.6;1" dur="3s" begin="0.0s" repeatCount="indefinite"/></rect>
+<rect x="562.0" y="440" width="9.3" height="2" fill="#C8A45C" opacity=".3"/>
 <rect x="575.3" y="440" width="9.3" height="2" fill="#C8A45C" opacity=".3"/>
 <rect x="588.7" y="440" width="9.3" height="2" fill="#C8A45C" opacity=".3"/>
 <rect x="602.0" y="440" width="9.3" height="2" fill="#C8A45C" opacity=".3"/>
@@ -126,8 +126,8 @@
 <rect x="868.7" y="440" width="9.3" height="2" fill="#C8A45C" opacity=".3"/>
 <rect x="882.0" y="440" width="9.3" height="2" fill="#C8A45C" opacity=".3"/>
 <rect x="895.3" y="440" width="9.3" height="2" fill="#C8A45C" opacity=".3"/>
-<rect x="908.7" y="440" width="9.3" height="2" fill="#C8A45C" opacity=".3"/>
-<rect x="922.0" y="398.0" width="9.3" height="44.0" fill="#C8A45C"><animate attributeName="opacity" values="1;.6;1" dur="3s" begin="0.9s" repeatCount="indefinite"/></rect>
-<rect x="935.3" y="425.3" width="9.3" height="16.7" fill="#C8A45C"><animate attributeName="opacity" values="1;.6;1" dur="3s" begin="1.2s" repeatCount="indefinite"/></rect>
+<rect x="908.7" y="398.0" width="9.3" height="44.0" fill="#C8A45C"><animate attributeName="opacity" values="1;.6;1" dur="3s" begin="0.6s" repeatCount="indefinite"/></rect>
+<rect x="922.0" y="425.3" width="9.3" height="16.7" fill="#C8A45C"><animate attributeName="opacity" values="1;.6;1" dur="3s" begin="0.9s" repeatCount="indefinite"/></rect>
+<rect x="935.3" y="440" width="9.3" height="2" fill="#C8A45C" opacity=".3"/>
 <rect x="948.7" y="440" width="9.3" height="2" fill="#C8A45C" opacity=".3"/>
 </svg>

@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" role="img" aria-label="Contribution reactor: 40 contributions in the last 52 weeks">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" role="img" aria-label="Contribution reactor: 41 contributions in the last 52 weeks">
 <defs><radialGradient id="rc" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#F3E2B5" stop-opacity=".55"/><stop offset=".5" stop-color="#C8A45C" stop-opacity=".18"/><stop offset="1" stop-color="#A4161A" stop-opacity="0"/></radialGradient></defs>
 <rect width="1000" height="470" rx="10" fill="#0D0D0F"/>
 <circle cx="40" cy="34" r="4" fill="#A4161A"><animate attributeName="opacity" values="1;.35;1" dur="2.4s" repeatCount="indefinite"/></circle>
 <text x="54" y="38" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="11" letter-spacing="2.2" fill="#C8A45C">REACTOR OUTPUT</text>
-<text x="960" y="38" text-anchor="end" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="11" letter-spacing="2.2" fill="#8C867A">52 WEEKS · 40 CONTRIBUTIONS</text>
+<text x="960" y="38" text-anchor="end" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="11" letter-spacing="2.2" fill="#8C867A">52 WEEKS · 41 CONTRIBUTIONS</text>
 <line x1="40" y1="52" x2="960" y2="52" stroke="#2A2620"/>
 <circle cx="270" cy="258" r="74" fill="none" stroke="#C8A45C" stroke-dasharray="2 5" opacity="0.5"/>
 <circle cx="270" cy="258" r="122.0" fill="none" stroke="#C8A45C" stroke-dasharray="2 5" opacity="0.25"/>
@@ -56,31 +56,31 @@
 <line x1="209.1" y1="216.0" x2="203.3" y2="212.0" stroke="#C8A45C" stroke-width="2" stroke-linecap="round" opacity=".28"/>
 <line x1="214.6" y1="208.9" x2="209.4" y2="204.3" stroke="#C8A45C" stroke-width="2" stroke-linecap="round" opacity=".28"/>
 <line x1="220.9" y1="202.6" x2="216.3" y2="197.4" stroke="#C8A45C" stroke-width="2" stroke-linecap="round" opacity=".28"/>
-<line x1="228.0" y1="197.1" x2="201.5" y2="158.7" stroke="#C8A45C" stroke-width="12" stroke-linecap="round" opacity=".16"/>
-<line x1="228.0" y1="197.1" x2="201.5" y2="158.7" stroke="#C8A45C" stroke-width="4.5" stroke-linecap="round"/>
-<circle cx="201.5" cy="158.7" r="4.5" fill="#C8242A"><animate attributeName="r" values="3.5;6;3.5" dur="2.6s" repeatCount="indefinite"/></circle>
+<line x1="228.0" y1="197.1" x2="201.6" y2="159.0" stroke="#C8A45C" stroke-width="12" stroke-linecap="round" opacity=".16"/>
+<line x1="228.0" y1="197.1" x2="201.6" y2="159.0" stroke="#C8A45C" stroke-width="4.5" stroke-linecap="round"/>
+<circle cx="201.6" cy="159.0" r="4.5" fill="#C8242A"><animate attributeName="r" values="3.5;6;3.5" dur="2.6s" repeatCount="indefinite"/></circle>
 <line x1="235.6" y1="192.5" x2="232.4" y2="186.3" stroke="#C8A45C" stroke-width="2" stroke-linecap="round" opacity=".28"/>
 <line x1="243.8" y1="188.8" x2="241.3" y2="182.3" stroke="#C8A45C" stroke-width="2" stroke-linecap="round" opacity=".28"/>
 <line x1="252.3" y1="186.2" x2="250.6" y2="179.4" stroke="#C8A45C" stroke-width="2" stroke-linecap="round" opacity=".28"/>
 <line x1="261.1" y1="184.5" x2="249.5" y2="89.2" stroke="#C8A45C" stroke-width="12" stroke-linecap="round" opacity=".16"/>
 <line x1="261.1" y1="184.5" x2="249.5" y2="89.2" stroke="#C8A45C" stroke-width="4.5" stroke-linecap="round"/>
 <circle cx="249.5" cy="89.2" r="4.5" fill="#C8242A"><animate attributeName="r" values="3.5;6;3.5" dur="2.6s" repeatCount="indefinite"/></circle>
-<text x="247.6" y="76.4" text-anchor="end" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="10.5" letter-spacing="1" fill="#E6C77E">PEAK 36</text>
+<text x="247.6" y="76.4" text-anchor="end" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="10.5" letter-spacing="1" fill="#E6C77E">PEAK 37</text>
 <circle cx="270" cy="258" r="62" fill="url(#rc)"><animate attributeName="r" values="56;66;56" dur="3.2s" repeatCount="indefinite"/></circle>
 <circle cx="270" cy="258" r="52" fill="#0D0D0F" stroke="#C8A45C" stroke-width="1.2"/>
 <circle cx="270" cy="258" r="45" fill="none" stroke="#A4161A" stroke-width="1.5" stroke-dasharray="8 6"><animateTransform attributeName="transform" type="rotate" from="0 270 258" to="-360 270 258" dur="16s" repeatCount="indefinite"/></circle>
-<text x="270" y="266" text-anchor="middle" font-family="'Segoe UI',-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="28" fill="#E6C77E">40</text>
+<text x="270" y="266" text-anchor="middle" font-family="'Segoe UI',-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="28" fill="#E6C77E">41</text>
 <text x="270" y="282" text-anchor="middle" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="7.5" letter-spacing="1.6" fill="#8C867A">OUTPUT</text>
 <text x="270" y="46" text-anchor="middle" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="9" letter-spacing="1.5" fill="#8C867A"></text>
 <text x="270" y="454" text-anchor="middle" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="9" letter-spacing="1.6" fill="#8C867A">OCT 2025  →  OCT 2026  ·  CLOCKWISE</text>
 <rect x="546" y="82" width="3" height="34" fill="#A4161A" opacity=".7"/>
 <text x="560" y="96" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="10.5" letter-spacing="1.4" fill="#C8A45C">TOTAL CONTRIBUTIONS</text>
-<text x="560" y="118" font-family="'Segoe UI',-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="22" fill="#E8E6E1">40</text>
+<text x="560" y="118" font-family="'Segoe UI',-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="22" fill="#E8E6E1">41</text>
 <text x="960" y="118" text-anchor="end" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#8C867A">last 52 weeks</text>
 <line x1="560" y1="130" x2="960" y2="130" stroke="#2A2620"/>
 <rect x="546" y="138" width="3" height="34" fill="#A4161A" opacity=".7"/>
 <text x="560" y="152" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="10.5" letter-spacing="1.4" fill="#C8A45C">ACTIVE DAYS</text>
-<text x="560" y="174" font-family="'Segoe UI',-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="22" fill="#E8E6E1">3</text>
+<text x="560" y="174" font-family="'Segoe UI',-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="22" fill="#E8E6E1">4</text>
 <text x="960" y="174" text-anchor="end" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#8C867A">of 364 days</text>
 <line x1="560" y1="186" x2="960" y2="186" stroke="#2A2620"/>
 <rect x="546" y="194" width="3" height="34" fill="#A4161A" opacity=".7"/>
@@ -90,8 +90,8 @@
 <line x1="560" y1="242" x2="960" y2="242" stroke="#2A2620"/>
 <rect x="546" y="250" width="3" height="34" fill="#A4161A" opacity=".7"/>
 <text x="560" y="264" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="10.5" letter-spacing="1.4" fill="#C8A45C">CURRENT STREAK</text>
-<text x="560" y="286" font-family="'Segoe UI',-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="22" fill="#E8E6E1">0</text>
-<text x="960" y="286" text-anchor="end" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#8C867A">days</text>
+<text x="560" y="286" font-family="'Segoe UI',-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="22" fill="#E8E6E1">1</text>
+<text x="960" y="286" text-anchor="end" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#8C867A">day</text>
 <line x1="560" y1="298" x2="960" y2="298" stroke="#2A2620"/>
 <rect x="546" y="306" width="3" height="34" fill="#A4161A" opacity=".7"/>
 <text x="560" y="320" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="10.5" letter-spacing="1.4" fill="#C8A45C">LONGEST STREAK</text>
@@ -129,5 +129,5 @@
 <rect x="908.7" y="425.3" width="9.3" height="16.7" fill="#C8A45C"><animate attributeName="opacity" values="1;.6;1" dur="3s" begin="0.6s" repeatCount="indefinite"/></rect>
 <rect x="922.0" y="440" width="9.3" height="2" fill="#C8A45C" opacity=".3"/>
 <rect x="935.3" y="440" width="9.3" height="2" fill="#C8A45C" opacity=".3"/>
-<rect x="948.7" y="440" width="9.3" height="2" fill="#C8A45C" opacity=".3"/>
+<rect x="948.7" y="427.8" width="9.3" height="14.2" fill="#C8A45C"><animate attributeName="opacity" values="1;.6;1" dur="3s" begin="1.5s" repeatCount="indefinite"/></rect>
 </svg>

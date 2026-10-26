@@ -9,14 +9,14 @@
   [
    2,
    0,
-   0,
+   2,
    0
   ],
   [
+   2,
    0,
    0,
-   0,
-   2
+   0
   ],
   [
    0,
@@ -27,14 +27,25 @@
  ],
  "score": 0,
  "best": 0,
- "moves": 0,
+ "moves": 1,
  "games": 1,
  "status": "playing",
  "last": {
-  "spawn": [],
+  "spawn": [
+   [
+    1,
+    2
+   ]
+  ],
   "merged": []
  },
- "log": [],
- "version": 0,
- "top": 0
+ "log": [
+  {
+   "user": "TechSidd18",
+   "dir": "left",
+   "gain": 0
+  }
+ ],
+ "version": 1,
+ "top": 2
 }

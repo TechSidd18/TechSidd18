@@ -148,7 +148,7 @@ Community: Codester Club (Creative Head)
 
 <div align="center">
 
-<!--G2K_BOARD:START--><img src="./assets/game2048.svg?v=0" alt="2048 board" width="100%"/><!--G2K_BOARD:END-->
+<!--G2K_BOARD:START--><img src="./assets/game2048.svg?v=1" alt="2048 board" width="100%"/><!--G2K_BOARD:END-->
 
 <a href="https://github.com/TechSidd18/TechSidd18/issues/new?title=g2k%7Cleft&body=Just+press+%22Submit+new+issue%22.+Do+not+edit+the+title."><img src="https://img.shields.io/badge/MOVE-LEFT-1F1F22?style=for-the-badge&labelColor=A4161A" alt="Move left"/></a>
 <a href="https://github.com/TechSidd18/TechSidd18/issues/new?title=g2k%7Cup&body=Just+press+%22Submit+new+issue%22.+Do+not+edit+the+title."><img src="https://img.shields.io/badge/MOVE-UP-1F1F22?style=for-the-badge&labelColor=A4161A" alt="Move up"/></a>
@@ -162,7 +162,7 @@ Community: Codester Club (Creative Head)
 **Recent moves**
 
 <!--G2K_LOG:START-->
-_No moves yet. Be the first to play!_
+- `@TechSidd18` moved **left** (+0)
 <!--G2K_LOG:END-->
 
 ---

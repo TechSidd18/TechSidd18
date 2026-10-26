@@ -13,12 +13,13 @@
 <g transform="translate(91.0 236.0)"><rect x="-42.0" y="-42.0" width="84" height="84" rx="6" fill="#1E1E22"/><rect x="-39.0" y="-39.0" width="78" height="78" rx="4" fill="none" stroke="#E6C77E" stroke-opacity=".25"/><text x="0" y="12.2" text-anchor="middle" font-family="'Segoe UI',-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="34" fill="#CFC9BB">2</text></g>
 <rect x="142" y="194" width="84" height="84" rx="6" fill="#0D0D0F" stroke="#2A2620"/>
 <rect x="235" y="194" width="84" height="84" rx="6" fill="#0D0D0F" stroke="#2A2620"/>
+<g transform="translate(277.0 236.0)"><g><rect x="-42.0" y="-42.0" width="84" height="84" rx="6" fill="#1E1E22"/><rect x="-39.0" y="-39.0" width="78" height="78" rx="4" fill="none" stroke="#E6C77E" stroke-opacity=".25"/><text x="0" y="12.2" text-anchor="middle" font-family="'Segoe UI',-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="34" fill="#CFC9BB">2</text><animateTransform attributeName="transform" type="scale" from="0.4" to="1" dur="0.35s" fill="freeze"/></g></g>
 <rect x="328" y="194" width="84" height="84" rx="6" fill="#0D0D0F" stroke="#2A2620"/>
 <rect x="49" y="287" width="84" height="84" rx="6" fill="#0D0D0F" stroke="#2A2620"/>
+<g transform="translate(91.0 329.0)"><rect x="-42.0" y="-42.0" width="84" height="84" rx="6" fill="#1E1E22"/><rect x="-39.0" y="-39.0" width="78" height="78" rx="4" fill="none" stroke="#E6C77E" stroke-opacity=".25"/><text x="0" y="12.2" text-anchor="middle" font-family="'Segoe UI',-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="34" fill="#CFC9BB">2</text></g>
 <rect x="142" y="287" width="84" height="84" rx="6" fill="#0D0D0F" stroke="#2A2620"/>
 <rect x="235" y="287" width="84" height="84" rx="6" fill="#0D0D0F" stroke="#2A2620"/>
 <rect x="328" y="287" width="84" height="84" rx="6" fill="#0D0D0F" stroke="#2A2620"/>
-<g transform="translate(370.0 329.0)"><rect x="-42.0" y="-42.0" width="84" height="84" rx="6" fill="#1E1E22"/><rect x="-39.0" y="-39.0" width="78" height="78" rx="4" fill="none" stroke="#E6C77E" stroke-opacity=".25"/><text x="0" y="12.2" text-anchor="middle" font-family="'Segoe UI',-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="34" fill="#CFC9BB">2</text></g>
 <rect x="49" y="380" width="84" height="84" rx="6" fill="#0D0D0F" stroke="#2A2620"/>
 <rect x="142" y="380" width="84" height="84" rx="6" fill="#0D0D0F" stroke="#2A2620"/>
 <rect x="235" y="380" width="84" height="84" rx="6" fill="#0D0D0F" stroke="#2A2620"/>
@@ -35,12 +36,13 @@
 <text x="720" y="230" text-anchor="end" font-family="'Segoe UI',-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="20" fill="#E8E6E1">0</text>
 <rect x="506" y="252" width="3" height="22" fill="#A4161A" opacity=".7"/>
 <text x="520" y="266" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="10.5" letter-spacing="1.4" fill="#C8A45C">MOVES</text>
-<text x="720" y="268" text-anchor="end" font-family="'Segoe UI',-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="20" fill="#E8E6E1">0</text>
+<text x="720" y="268" text-anchor="end" font-family="'Segoe UI',-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="20" fill="#E8E6E1">1</text>
 <rect x="506" y="290" width="3" height="22" fill="#A4161A" opacity=".7"/>
 <text x="520" y="304" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="10.5" letter-spacing="1.4" fill="#C8A45C">HIGHEST TILE</text>
-<text x="720" y="306" text-anchor="end" font-family="'Segoe UI',-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="20" fill="#E8E6E1">0</text>
+<text x="720" y="306" text-anchor="end" font-family="'Segoe UI',-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="20" fill="#E8E6E1">2</text>
 <line x1="520" y1="338" x2="720" y2="338" stroke="#2A2620"/>
 <text x="520" y="362" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="10.5" letter-spacing="1.4" fill="#C8A45C">LAST MOVES</text>
-<text x="520" y="388" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#8C867A">No moves yet. Be the first.</text>
+<text x="520" y="388" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#E8E6E1">@TechSidd18</text>
+<text x="720" y="388" text-anchor="end" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#8C867A">LEFT · +0</text>
 <text x="40" y="504" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="9.5" letter-spacing="1.2" fill="#8C867A">MERGE EQUAL TILES · REACH 2048 · EVERY VISITOR PLAYS THE SAME BOARD</text>
 </svg>

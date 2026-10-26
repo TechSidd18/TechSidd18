@@ -1,4 +1,4 @@
-name: Connect Four
+name: "Game 2048"
 
 on:
   issues:
@@ -9,12 +9,12 @@ permissions:
   issues: write
 
 concurrency:
-  group: connect4
+  group: game2048
   cancel-in-progress: false
 
 jobs:
   play:
-    if: startsWith(github.event.issue.title, 'c4|')
+    if: startsWith(github.event.issue.title, 'g2k|')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -26,7 +26,7 @@ jobs:
         env:
           ISSUE_TITLE: ${{ github.event.issue.title }}
           ISSUE_USER: ${{ github.event.issue.user.login }}
-        run: python3 scripts/connect4.py
+        run: python3 scripts/game2048.py
 
       - name: Commit board
         if: steps.play.outputs.result == 'ok'
@@ -38,12 +38,12 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add game assets README.md
           git diff --cached --quiet && exit 0
-          git commit -m "c4: move by @${ISSUE_USER}"
+          git commit -m "2048: move by @${ISSUE_USER}"
           for i in 1 2 3 4; do
             git pull --rebase origin "$BRANCH" && git push origin "HEAD:$BRANCH" && exit 0
             sleep $((i * 3))
           done
-          echo "push failed" > /tmp/c4_comment.md
+          echo "push failed" > /tmp/g2k_comment.md
           exit 1
 
       - name: Reply and close issue
@@ -53,6 +53,6 @@ jobs:
           NUM: ${{ github.event.issue.number }}
           REPO: ${{ github.repository }}
         run: |
-          [ -s /tmp/c4_comment.md ] || echo "Something went wrong while processing this move. Please try again." > /tmp/c4_comment.md
-          gh issue comment "$NUM" --repo "$REPO" --body-file /tmp/c4_comment.md || true
+          [ -s /tmp/g2k_comment.md ] || echo "Something went wrong while processing this move. Please try again." > /tmp/g2k_comment.md
+          gh issue comment "$NUM" --repo "$REPO" --body-file /tmp/g2k_comment.md || true
           gh issue close "$NUM" --repo "$REPO" --reason completed || true

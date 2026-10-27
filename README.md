@@ -39,20 +39,6 @@ Community: Codester Club (Creative Head)
 
 </div>
 
-<br/>
-
-<div align="center">
-
-| Category | Tools &amp; Technologies |
-|:---|:---|
-| **BI &amp; Analytics** | ![Power BI](https://img.shields.io/badge/Power_BI-1F1F22?style=for-the-badge&labelColor=1F1F22&logo=powerbi&logoColor=C8A45C) ![Excel](https://img.shields.io/badge/Microsoft_Excel-1F1F22?style=for-the-badge&labelColor=1F1F22&logo=microsoftexcel&logoColor=C8A45C) ![IBM Cognos](https://img.shields.io/badge/IBM_Cognos-1F1F22?style=for-the-badge&labelColor=1F1F22&logo=ibm&logoColor=C8A45C) ![Pandas](https://img.shields.io/badge/Pandas-1F1F22?style=for-the-badge&labelColor=1F1F22&logo=pandas&logoColor=C8A45C) ![NumPy](https://img.shields.io/badge/NumPy-1F1F22?style=for-the-badge&labelColor=1F1F22&logo=numpy&logoColor=C8A45C) |
-| **Databases &amp; Cloud** | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-1F1F22?style=for-the-badge&labelColor=1F1F22&logo=postgresql&logoColor=C8A45C) ![Supabase](https://img.shields.io/badge/Supabase-1F1F22?style=for-the-badge&labelColor=1F1F22&logo=supabase&logoColor=C8A45C) ![SQL](https://img.shields.io/badge/SQL_Intermediate-1F1F22?style=for-the-badge&labelColor=1F1F22&logo=postgresql&logoColor=C8A45C) ![Node.js](https://img.shields.io/badge/Node.js-1F1F22?style=for-the-badge&labelColor=1F1F22&logo=node.js&logoColor=C8A45C) |
-| **Core Languages** | ![Python](https://img.shields.io/badge/Python-1F1F22?style=for-the-badge&labelColor=1F1F22&logo=python&logoColor=C8A45C) ![C++](https://img.shields.io/badge/C%2B%2B-1F1F22?style=for-the-badge&labelColor=1F1F22&logo=c%2B%2B&logoColor=C8A45C) |
-| **Design &amp; UI Systems** | ![Figma](https://img.shields.io/badge/Figma-1F1F22?style=for-the-badge&labelColor=1F1F22&logo=figma&logoColor=C8A45C) ![Photoshop](https://img.shields.io/badge/Adobe_Photoshop-1F1F22?style=for-the-badge&labelColor=1F1F22&logo=adobephotoshop&logoColor=C8A45C) |
-| **Workflow &amp; VCS** | ![Git](https://img.shields.io/badge/Git-1F1F22?style=for-the-badge&labelColor=1F1F22&logo=git&logoColor=C8A45C) ![GitHub](https://img.shields.io/badge/GitHub-1F1F22?style=for-the-badge&labelColor=1F1F22&logo=github&logoColor=C8A45C) ![VS Code](https://img.shields.io/badge/VS_Code-1F1F22?style=for-the-badge&labelColor=1F1F22&logo=visualstudiocode&logoColor=C8A45C) |
-
-</div>
-
 ---
 
 ### 📂 FEATURED PROJECTS

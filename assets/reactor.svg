@@ -55,26 +55,26 @@
 <line x1="204.5" y1="223.6" x2="198.3" y2="220.4" stroke="#C8A45C" stroke-width="2" stroke-linecap="round" opacity=".28"/>
 <line x1="209.1" y1="216.0" x2="203.3" y2="212.0" stroke="#C8A45C" stroke-width="2" stroke-linecap="round" opacity=".28"/>
 <line x1="214.6" y1="208.9" x2="209.4" y2="204.3" stroke="#C8A45C" stroke-width="2" stroke-linecap="round" opacity=".28"/>
-<line x1="220.9" y1="202.6" x2="216.3" y2="197.4" stroke="#C8A45C" stroke-width="2" stroke-linecap="round" opacity=".28"/>
-<line x1="228.0" y1="197.1" x2="201.0" y2="158.1" stroke="#C8A45C" stroke-width="12" stroke-linecap="round" opacity=".16"/>
-<line x1="228.0" y1="197.1" x2="201.0" y2="158.1" stroke="#C8A45C" stroke-width="4.5" stroke-linecap="round"/>
-<circle cx="201.0" cy="158.1" r="4.5" fill="#C8242A"><animate attributeName="r" values="3.5;6;3.5" dur="2.6s" repeatCount="indefinite"/></circle>
+<line x1="220.9" y1="202.6" x2="190.0" y2="167.7" stroke="#C8A45C" stroke-width="12" stroke-linecap="round" opacity=".16"/>
+<line x1="220.9" y1="202.6" x2="190.0" y2="167.7" stroke="#C8A45C" stroke-width="4.5" stroke-linecap="round"/>
+<circle cx="190.0" cy="167.7" r="4.5" fill="#C8242A"><animate attributeName="r" values="3.5;6;3.5" dur="2.6s" repeatCount="indefinite"/></circle>
+<line x1="228.0" y1="197.1" x2="224.0" y2="191.3" stroke="#C8A45C" stroke-width="2" stroke-linecap="round" opacity=".28"/>
 <line x1="235.6" y1="192.5" x2="232.4" y2="186.3" stroke="#C8A45C" stroke-width="2" stroke-linecap="round" opacity=".28"/>
 <line x1="243.8" y1="188.8" x2="241.3" y2="182.3" stroke="#C8A45C" stroke-width="2" stroke-linecap="round" opacity=".28"/>
 <line x1="252.3" y1="186.2" x2="229.3" y2="92.9" stroke="#C8A45C" stroke-width="12" stroke-linecap="round" opacity=".16"/>
 <line x1="252.3" y1="186.2" x2="229.3" y2="92.9" stroke="#C8A45C" stroke-width="4.5" stroke-linecap="round"/>
 <circle cx="229.3" cy="92.9" r="4.5" fill="#C8242A"><animate attributeName="r" values="3.5;6;3.5" dur="2.6s" repeatCount="indefinite"/></circle>
-<text x="225.5" y="80.4" text-anchor="end" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="10.5" letter-spacing="1" fill="#E6C77E">PEAK 34</text>
-<line x1="261.1" y1="184.5" x2="253.8" y2="124.9" stroke="#C8A45C" stroke-width="12" stroke-linecap="round" opacity=".16"/>
-<line x1="261.1" y1="184.5" x2="253.8" y2="124.9" stroke="#C8A45C" stroke-width="4.5" stroke-linecap="round"/>
-<circle cx="253.8" cy="124.9" r="4.5" fill="#C8242A"><animate attributeName="r" values="3.5;6;3.5" dur="2.6s" repeatCount="indefinite"/></circle>
+<text x="225.5" y="80.4" text-anchor="end" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="10.5" letter-spacing="1" fill="#E6C77E">PEAK 36</text>
+<line x1="261.1" y1="184.5" x2="254.5" y2="130.3" stroke="#C8A45C" stroke-width="12" stroke-linecap="round" opacity=".16"/>
+<line x1="261.1" y1="184.5" x2="254.5" y2="130.3" stroke="#C8A45C" stroke-width="4.5" stroke-linecap="round"/>
+<circle cx="254.5" cy="130.3" r="4.5" fill="#C8242A"><animate attributeName="r" values="3.5;6;3.5" dur="2.6s" repeatCount="indefinite"/></circle>
 <circle cx="270" cy="258" r="62" fill="url(#rc)"><animate attributeName="r" values="56;66;56" dur="3.2s" repeatCount="indefinite"/></circle>
 <circle cx="270" cy="258" r="52" fill="#0D0D0F" stroke="#C8A45C" stroke-width="1.2"/>
 <circle cx="270" cy="258" r="45" fill="none" stroke="#A4161A" stroke-width="1.5" stroke-dasharray="8 6"><animateTransform attributeName="transform" type="rotate" from="0 270 258" to="-360 270 258" dur="16s" repeatCount="indefinite"/></circle>
 <text x="270" y="266" text-anchor="middle" font-family="'Segoe UI',-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="28" fill="#E6C77E">47</text>
 <text x="270" y="282" text-anchor="middle" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="7.5" letter-spacing="1.6" fill="#8C867A">OUTPUT</text>
 <text x="270" y="46" text-anchor="middle" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="9" letter-spacing="1.5" fill="#8C867A"></text>
-<text x="270" y="454" text-anchor="middle" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="9" letter-spacing="1.6" fill="#8C867A">OCT 2025  →  OCT 2026  ·  CLOCKWISE</text>
+<text x="270" y="454" text-anchor="middle" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="9" letter-spacing="1.6" fill="#8C867A">NOV 2025  →  OCT 2026  ·  CLOCKWISE</text>
 <rect x="546" y="82" width="3" height="34" fill="#A4161A" opacity=".7"/>
 <text x="560" y="96" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="10.5" letter-spacing="1.4" fill="#C8A45C">TOTAL CONTRIBUTIONS</text>
 <text x="560" y="118" font-family="'Segoe UI',-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="22" fill="#E8E6E1">47</text>
@@ -92,7 +92,7 @@
 <line x1="560" y1="242" x2="960" y2="242" stroke="#2A2620"/>
 <rect x="546" y="250" width="3" height="34" fill="#A4161A" opacity=".7"/>
 <text x="560" y="264" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="10.5" letter-spacing="1.4" fill="#C8A45C">CURRENT STREAK</text>
-<text x="560" y="286" font-family="'Segoe UI',-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="22" fill="#E8E6E1">3</text>
+<text x="560" y="286" font-family="'Segoe UI',-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="22" fill="#E8E6E1">0</text>
 <text x="960" y="286" text-anchor="end" font-family="'SF Mono','Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#8C867A">days</text>
 <line x1="560" y1="298" x2="960" y2="298" stroke="#2A2620"/>
 <rect x="546" y="306" width="3" height="34" fill="#A4161A" opacity=".7"/>
@@ -123,13 +123,13 @@
 <rect x="802.0" y="440" width="9.3" height="2" fill="#C8A45C" opacity=".3"/>
 <rect x="815.3" y="440" width="9.3" height="2" fill="#C8A45C" opacity=".3"/>
 <rect x="828.7" y="440" width="9.3" height="2" fill="#C8A45C" opacity=".3"/>
-<rect x="842.0" y="440" width="9.3" height="2" fill="#C8A45C" opacity=".3"/>
-<rect x="855.3" y="398.0" width="9.3" height="44.0" fill="#C8A45C"><animate attributeName="opacity" values="1;.6;1" dur="3s" begin="1.2s" repeatCount="indefinite"/></rect>
-<rect x="868.7" y="425.3" width="9.3" height="16.7" fill="#C8A45C"><animate attributeName="opacity" values="1;.6;1" dur="3s" begin="1.5s" repeatCount="indefinite"/></rect>
+<rect x="842.0" y="398.0" width="9.3" height="44.0" fill="#C8A45C"><animate attributeName="opacity" values="1;.6;1" dur="3s" begin="0.9s" repeatCount="indefinite"/></rect>
+<rect x="855.3" y="425.3" width="9.3" height="16.7" fill="#C8A45C"><animate attributeName="opacity" values="1;.6;1" dur="3s" begin="1.2s" repeatCount="indefinite"/></rect>
+<rect x="868.7" y="440" width="9.3" height="2" fill="#C8A45C" opacity=".3"/>
 <rect x="882.0" y="440" width="9.3" height="2" fill="#C8A45C" opacity=".3"/>
-<rect x="895.3" y="440" width="9.3" height="2" fill="#C8A45C" opacity=".3"/>
-<rect x="908.7" y="427.8" width="9.3" height="14.2" fill="#C8A45C"><animate attributeName="opacity" values="1;.6;1" dur="3s" begin="0.6s" repeatCount="indefinite"/></rect>
-<rect x="922.0" y="420.2" width="9.3" height="21.8" fill="#C8A45C"><animate attributeName="opacity" values="1;.6;1" dur="3s" begin="0.9s" repeatCount="indefinite"/></rect>
-<rect x="935.3" y="427.8" width="9.3" height="14.2" fill="#C8A45C"><animate attributeName="opacity" values="1;.6;1" dur="3s" begin="1.2s" repeatCount="indefinite"/></rect>
+<rect x="895.3" y="427.8" width="9.3" height="14.2" fill="#C8A45C"><animate attributeName="opacity" values="1;.6;1" dur="3s" begin="0.3s" repeatCount="indefinite"/></rect>
+<rect x="908.7" y="420.2" width="9.3" height="21.8" fill="#C8A45C"><animate attributeName="opacity" values="1;.6;1" dur="3s" begin="0.6s" repeatCount="indefinite"/></rect>
+<rect x="922.0" y="427.8" width="9.3" height="14.2" fill="#C8A45C"><animate attributeName="opacity" values="1;.6;1" dur="3s" begin="0.9s" repeatCount="indefinite"/></rect>
+<rect x="935.3" y="440" width="9.3" height="2" fill="#C8A45C" opacity=".3"/>
 <rect x="948.7" y="440" width="9.3" height="2" fill="#C8A45C" opacity=".3"/>
 </svg>
